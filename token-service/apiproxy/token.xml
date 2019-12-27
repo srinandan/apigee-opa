@@ -1,0 +1,31 @@
+<APIProxy revision="3" name="token">
+    <DisplayName></DisplayName>
+    <Description>Generates a JWT Token</Description>
+    <CreatedAt>1576558965906</CreatedAt>
+    <LastModifiedAt>1576559012012</LastModifiedAt>
+    <BasePaths>/token</BasePaths>
+    <Policies>
+        <Policy>Init-Entries</Policy>
+        <Policy>Get-Private-Key</Policy>
+        <Policy>Authenticate-Error</Policy>
+        <Policy>Create-OAuth-Request</Policy>
+        <Policy>Generate-Access-Token</Policy>
+        <Policy>Validate-Params</Policy>
+        <Policy>Set-Response</Policy>
+        <Policy>Generate-Opaque-Token</Policy>
+        <Policy>Extract-Params</Policy>
+        <Policy>Access-App-Info</Policy>
+        <Policy>Get-App-Role</Policy>
+        <Policy>Set-App-Role</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://validate-params.js</Resource>
+        <Resource>jsc://set-response.js</Resource>
+        <Resource>jsc://get-app-role.js</Resource>
+    </Resources>
+    <TargetServers></TargetServers>
+    <TargetEndpoints></TargetEndpoints>
+</APIProxy>

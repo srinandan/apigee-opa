@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="Call-OPA">
+    <DisplayName>Call OPA</DisplayName>
+    <Properties/>
+    <Request clearPayload="true">
+        <Set>
+            <Headers>
+                <Header name="Accept">application/json</Header>
+            </Headers>
+            <Verb>POST</Verb>
+            <Payload contentType="application/json">
+                {
+                  "input":
+                  {
+                    "path": ["{proxy.basepath}"],
+                    "method": "{message.verb}",
+                    "token": "{oauthtoken}"
+                  }
+                }
+            </Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>opaResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://opa.apps.svc.cluster.local:8181/v1/data/httpapi/authz</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

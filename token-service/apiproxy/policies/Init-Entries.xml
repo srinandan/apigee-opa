@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Init-Entries" mapIdentifier="credentials">
+    <DisplayName>Init Entries</DisplayName>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <InitialEntries>
+        <Entry>
+            <Key>
+                <Parameter>public_key1_kid</Parameter>
+            </Key>
+            <Value>1</Value>
+        </Entry>
+        <Entry>
+            <Key>
+                <Parameter>private_key_kid</Parameter>
+            </Key>
+            <Value>1</Value>
+        </Entry>
+        <Entry>
+            <Key>
+                <Parameter>private_key</Parameter>
+            </Key>
+            <Value>
+                          -----BEGIN RSA PRIVATE KEY-----
+                        MIIEpAIBAAKCAQEAuj3aVuQOCmCTHJKyf2G5fUvwdH+esZaiGzOnRGaI0/qjzrBR
+                        GGED/CtpBUvjXRGRYyj3cW+cUY0lLCqsOSoMsX+ui/hTGETDSVcBxAlnErA/XTPQ
+                        E3BF/vbxx9CC8xmfoXHNrzMq8zfoTip47qptdnZy+fW+j/8xyRjji6hmQUoZcIzh
+                        LUd73RMYr7XX2iF8gH3bDb5y40zw8Ict/M5z7my7so7rfgfqb+EbL4Q1YhcrdmhL
+                        zP39Jc0CyTg3ISs9RtBiOtfhM/+0xfcYVmfii+DecxvMdpuQoW53ZafYv3W9qc34
+                        6i4bbUAW7ajVxxraEwEcEI1J78aJsqumjJ2YtQIDAQABAoIBAHknTYbi2kNj6a9X
+                        uuhkoS7iHK0cbBaooBHD+1biwLXtQWxuhIKwcdA0SSBZ6rEbgZGZD8bqTS07/WeK
+                        5vhU42cAYYLKavvJl6R5BjwJxdSBdObjksNicRZYfJZ4jQcprw9uIdiMF6+aufNH
+                        a94OXiEHEuqKM4om/7MLDtNGHCbxuVCjzYX3unYEicuPJ5xFJ6gwy4Q+uDmB/Wuq
+                        aQl4a4M3DTEy0cUORkwLQCD07ByVmwdsHH8cHnRHZec6w1rMn6SnYAlINNrDWD4V
+                        nDTzueRi92ZMRrfMcVG1rQs5c3420NcjHIZ0fXum4Qg4btn6mkU3rH5k2zsZFBRt
+                        X+9qWMECgYEA62T5lMaBk7TI06rRx8tdz06ouaiYPiLPzjxbmDeLqZXBX95pkBuA
+                        Jsezwp4p6urFhkIkmQUKsQB+VgAtPHjqk/3qCEQ0ShaJ3nMmWqsBO1gm8NwlZxk1
+                        vvH1JN/JkHuaCW3W1KNSeXQrce0kWP4GigtgMivBTkpY6IUAWJ0dmEUCgYEAyotl
+                        xQCCyIguBkHKjbdd5xWST71MIREnuX8xA94+blsgv7dMkW8tEQzTRJIdcD6vFl6J
+                        dj73cwev1JxpY1vFNpShpy+5gDH3HPkA34VX5oJjoqGG2hKNv/h2J0DdaEQuPSR+
+                        QBZbij3L8/zdJZ/M0A1JDdZzCwZNAsOtQoKBnbECgYEAkdnz5uIEYZ/vm29JIlF4
+                        471qP/cdtcpeFfxCCJPKHp6ivaMSp27SvbSZRio38M3c665J/OIp2Lhkjyb24HRP
+                        bLk0bEDOYWWLsWCJ0D4KulmJb04IgtQVACXtbhaXTsW3EMaVCRXVQVngnWuBTP7A
+                        0IHx7cQ8tyTL5+6Y408eij0CgYBL+k6Kv85PewYIwtVAo/BNpwHjd5b/MHg+VUAF
+                        u3Cf5P87636Fb7bwFmeJ6WWxnVIAiiX2fVhFhjSnBKVj6CDqgIbDOFvVgui3rZBu
+                        SI7YoUDO2NjFJQCXapSn1OU5H5pYxT+2uqxMBzJirBAo9PDXeqRU1IUDNbHdv5lW
+                        wa3tgQKBgQDgJfgsuS/osB/gzHwAyU35kufvwxpfhEicwC8F407X+johPd0cymzN
+                        RDlBGEToMBhom5iOGuT8R0S+YgPj50dITcD+ZxsugR4leR1VquZWE/aZuvaBpSDl
+                        yN4Ldcq7QlzIz/k0bGWGM+v9j/IVD6UBBU/n1ViiXDtSt3yxnHPBDQ==
+                        -----END RSA PRIVATE KEY-----
+            </Value>
+        </Entry>
+        <Entry>
+            <Key>
+                <Parameter>public_key</Parameter>
+            </Key>
+            <Value>
+                      -----BEGIN CERTIFICATE-----
+            MIICpDCCAYwCCQDgKKYNTB80ijANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAls
+            b2NhbGhvc3QwHhcNMTgwNzE5MTUxMjIxWhcNMTgwNzIwMTUxMjIxWjAUMRIwEAYD
+            VQQDDAlsb2NhbGhvc3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6
+            PdpW5A4KYJMckrJ/Ybl9S/B0f56xlqIbM6dEZojT+qPOsFEYYQP8K2kFS+NdEZFj
+            KPdxb5xRjSUsKqw5Kgyxf66L+FMYRMNJVwHECWcSsD9dM9ATcEX+9vHH0ILzGZ+h
+            cc2vMyrzN+hOKnjuqm12dnL59b6P/zHJGOOLqGZBShlwjOEtR3vdExivtdfaIXyA
+            fdsNvnLjTPDwhy38znPubLuyjut+B+pv4RsvhDViFyt2aEvM/f0lzQLJODchKz1G
+            0GI61+Ez/7TF9xhWZ+KL4N5zG8x2m5Chbndlp9i/db2pzfjqLhttQBbtqNXHGtoT
+            ARwQjUnvxomyq6aMnZi1AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHah7UrI3koq
+            38JOhID++AkfvoPb/hSSw1On4jPMXab2FhDQouuDfz7hkONPzU+DLC8lvAcF7OwL
+            uBDOX7uN8QWDoCADjXncWGIcaqpJn4vNTj0qkodFZWGnPrQfC3nV96GiJE0NHv7W
+            0VBJSmNVQd6A6z2NoN4LXzxE3adXdcIAkFXJp6rqXmM3Ewqu5A6gBZJFpUNzeWb1
+            x/smYLxaOhf0lsNAThkoV1N8573RyzncgEc+NPHoM2cgwe/IimlGIqva2nUdjurU
+            OLHhVJXJyvsdRBuqZdgRDYk9ihEkKDnfomZe5spycZb7EM6SgVp8Qg68UWxwU/Fa
+            97DOTKdybkE=
+            -----END CERTIFICATE-----                
+            </Value>
+        </Entry>
+    </InitialEntries>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

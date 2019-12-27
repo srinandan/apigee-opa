@@ -1,0 +1,25 @@
+<APIProxy revision="5" name="inventory">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1576560084579</CreatedAt>
+    <LastModifiedAt>1576560113107</LastModifiedAt>
+    <BasePaths>/items</BasePaths>
+    <Policies>
+        <Policy>Extract-OAuth</Policy>
+        <Policy>Get-Public-Key</Policy>
+        <Policy>Verify-JWT</Policy>
+        <Policy>Call-OPA</Policy>
+        <Policy>Get-OPA-Response</Policy>
+        <Policy>Raise-OPA-Fault</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://opa-response.js</Resource>
+    </Resources>
+    <TargetServers></TargetServers>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XMLToJSON async="false" continueOnError="false" enabled="true" name="Get-App-Role">
+    <DisplayName>Get App Role</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <OutputVariable>appAttributes</OutputVariable>
+    <Source>AccessEntity.ChildNodes.Access-App-Info.App.Attributes</Source>
+    <Options>
+        <TreatAsArray>
+            <Path>Attributes/Attribute</Path>
+        </TreatAsArray>
+    </Options>
+</XMLToJSON>

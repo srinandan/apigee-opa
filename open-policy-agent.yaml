@@ -1,0 +1,70 @@
+# kubectl create configmap inventory-policy -n apps --from-file policy.rego
+kind: Service
+apiVersion: v1
+metadata:
+  name: opa
+  namespace: apps
+  labels:
+    app: opa
+spec:
+  type: ClusterIP
+  selector:
+    app: opa
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8181
+      targetPort: 8181
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: opa
+  namespace: apps
+  labels:
+    app: opa
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: opa
+      name: opa
+    spec:
+      containers:
+      - name: opa
+        image: openpolicyagent/opa:latest
+        ports:
+        - name: http
+          containerPort: 8181
+        resources:
+          requests:
+            cpu: 250m          
+        args:
+        - "run"
+        - "--ignore=.*"  # exclude hidden dirs created by Kubernetes
+        - "--server"
+        - "/policies"
+        volumeMounts:
+        - readOnly: true
+          mountPath: /policies
+          name: inventory-policy
+        livenessProbe:
+          httpGet:
+            scheme: HTTP              # assumes OPA listens on localhost:8181
+            port: 8181
+          initialDelaySeconds: 5      # tune these periods for your environemnt
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health?bundle=true  # Include bundle activation in readiness
+            scheme: HTTP
+            port: 8181
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: inventory-policy
+        configMap:
+          name: inventory-policy
+      nodeSelector:
+        cloud.google.com/gke-nodepool: "apps"          

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Generate-Opaque-Token">
+    <DisplayName>Generate Opaque Token</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Attributes/>
+    <GenerateErrorResponse enabled="true">
+        <Format>FORM_PARAM</Format>
+    </GenerateErrorResponse>
+    <!-- expiry set to 30 mins -->
+    <ExpiresIn ref="token_expiry">108000000</ExpiresIn>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessToken</Operation>
+    <!-- expiry set to 120 mins -->
+    <RefreshTokenExpiresIn ref="refresh_token_expiry">432000000</RefreshTokenExpiresIn>
+    <GenerateResponse enabled="false">
+        <Format>FORM_PARAM</Format>
+    </GenerateResponse>
+    <ReuseRefreshToken>true</ReuseRefreshToken>
+    <SupportedGrantTypes>
+        <GrantType>password</GrantType>
+        <GrantType>client_credentials</GrantType>
+    </SupportedGrantTypes>
+    <!-- set scope -->
+    <Scope>scope</Scope>
+    <Tokens/>
+</OAuthV2>

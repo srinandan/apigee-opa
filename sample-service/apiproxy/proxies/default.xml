@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>Extract-OAuth</Name>
+            </Step>
+            <Step>
+                <Name>Get-Public-Key</Name>
+            </Step>
+            <Step>
+                <Name>Verify-JWT</Name>
+            </Step>
+            <Step>
+                <Name>Call-OPA</Name>
+            </Step>
+            <Step>
+                <Name>Get-OPA-Response</Name>
+            </Step>
+            <Step>
+                <Name>Raise-OPA-Fault</Name>
+                <Condition>opa_decision = "false"</Condition>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows/>
+    <HTTPProxyConnection>
+        <BasePath>/items</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

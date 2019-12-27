@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="false" enabled="true" name="Verify-JWT">
+    <DisplayName>Verify JWT</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <Source>oauthtoken</Source>
+    <PublicKey>
+        <Value ref="publicKey"/>
+    </PublicKey>
+</VerifyJWT>
