@@ -64,6 +64,11 @@ kubectl create configmap inventory-policy -n apps --from-file policy.rego
 
 Deploy OPA server to Kubernetes [manifest](./open-policy-agent.yaml)
 
+```bash
+
+kubectl apply -f open-policy-agent.yaml -n apps
+```
+
 #### Step 4
 
 Deploy a [token generation](./token-service) API proxy to Apigee hyrid
