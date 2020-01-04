@@ -34,14 +34,14 @@ default allow = false
 # Allow any app to get inventory
 allow {
   input.method == user_methods[_]
-  input.path = ["/items"]
+  input.path = ["/opa/items"]
   token.payload.role == user_roles[_]
 }
 
 # Allow only admin apps to create inventory
 allow {
   input.method == admin_methods[_]
-  input.path = ["/items"]
+  input.path = ["/opa/items"]
   token.payload.role == admin_roles[_]
 }
 
@@ -53,15 +53,6 @@ token = {"payload": payload} {
 
 #### Step 2
 
-Load the policy to kubernetes
-
-```bash
-
-kubectl create configmap inventory-policy -n apps --from-file policy.rego
-```
-
-#### Step 3
-
 Deploy OPA server to Kubernetes [manifest](./open-policy-agent.yaml)
 
 ```bash
@@ -69,15 +60,15 @@ Deploy OPA server to Kubernetes [manifest](./open-policy-agent.yaml)
 kubectl apply -f open-policy-agent.yaml -n apps
 ```
 
-#### Step 4
+#### Step 3
 
 Deploy a [token generation](./token-service) API proxy to Apigee hyrid
 
-#### Step 5
+#### Step 4
 
 Deploy the sample [inventory](./sample-service) API proxy to Apigee hyrid
 
-#### Step 6
+#### Step 5
 
 Create developer applications with a custom attribute called `role`. Set the user role on the app
 <img src="./img/rOE01ccx6fU.png" width="400" height="600">
