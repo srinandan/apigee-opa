@@ -21,10 +21,10 @@ if [ $RESULT -ne 0 ]; then
 fi
 
 # zip the bundles
-cd sample-service && zip -r ../inventory.zip apiproxy && cd ..
+cd sample-service && zip -r ../inventory-opa.zip apiproxy && cd ..
 
 # import the sample
-apigeecli apis create -o $1 -n inventory -p inventory.zip -a $3
+apigeecli apis create -o $1 -n inventory-opa -p inventory-opa.zip -a $3
 RESULT=$?
 if [ $RESULT -ne 0 ]; then
   echo "failed to import api proxy bundle"
@@ -32,7 +32,7 @@ if [ $RESULT -ne 0 ]; then
 fi
 
 # deploy the sample
-apigeecli apis deploy -o $1 -e $2 -n inventory -v 1
+apigeecli apis deploy -o $1 -e $2 -n inventory-opa -v 1
 RESULT=$?
 if [ $RESULT -ne 0 ]; then
   echo "failed to deploy api proxy"
@@ -40,4 +40,4 @@ if [ $RESULT -ne 0 ]; then
 fi
 
 # clean up
-rm -rf inventory.zip
+rm -rf inventory-opa.zip

@@ -48,7 +48,7 @@
     </PostFlow>
     <Flows/>
     <HTTPProxyConnection>
-        <BasePath>/items</BasePath>
+        <BasePath>/opa/items</BasePath>
         <Properties/>
     </HTTPProxyConnection>
     <RouteRule name="default">

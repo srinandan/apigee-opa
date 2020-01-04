@@ -14,12 +14,12 @@
  limitations under the License.
 -->
 
-<APIProxy revision="5" name="inventory">
+<APIProxy revision="5" name="inventory-opa">
     <DisplayName></DisplayName>
     <Description></Description>
     <CreatedAt>1576560084579</CreatedAt>
     <LastModifiedAt>1576560113107</LastModifiedAt>
-    <BasePaths>/items</BasePaths>
+    <BasePaths>/opa/items</BasePaths>
     <Policies>
         <Policy>Extract-OAuth</Policy>
         <Policy>Get-Public-Key</Policy>
