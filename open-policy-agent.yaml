@@ -30,7 +30,7 @@ spec:
       port: 8181
       targetPort: 8181
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: opa
@@ -62,7 +62,7 @@ spec:
         volumeMounts:
         - readOnly: true
           mountPath: /policies
-          name: inventory-policy
+          name: api-authz-policy
         livenessProbe:
           httpGet:
             scheme: HTTP              # assumes OPA listens on localhost:8181
@@ -77,9 +77,9 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       volumes:
-      - name: inventory-policy
+      - name: api-authz-policy
         configMap:
-          name: inventory-policy
+          name: api-authz-policy
       nodeSelector:
         cloud.google.com/gke-nodepool: "apps"
 ---
@@ -99,6 +99,9 @@ data:
     user_roles = ["admin","user", ]
     user_methods = ["GET", ]
 
+    # Define masking permissions
+    unmasked_roles = ["admin"]
+
     default allow = false
 
     # Allow any app to get inventory
@@ -115,11 +118,18 @@ data:
       token.payload.role == admin_roles[_]
     }
 
+    # Allow unmasked customer data
+    allow {
+      input.path = ["/customers"]
+      token.payload.role == unmasked_roles[_]
+    }
+
     # Helper to get the token payload.
     token = {"payload": payload} {
       [header, payload, signature] := io.jwt.decode(input.token)
     }
+
 kind: ConfigMap
 metadata:
-  name: inventory-policy
+  name: api-authz-policy
   namespace: apps

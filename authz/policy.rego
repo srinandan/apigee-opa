@@ -11,6 +11,9 @@ admin_methods = ["GET", "POST", ]
 user_roles = ["admin","user", ]
 user_methods = ["GET", ]
 
+# Define masking permissions
+unmasked_roles = ["admin"]
+
 default allow = false
 
 # Allow any app to get inventory
@@ -25,6 +28,12 @@ allow {
   input.method == admin_methods[_]
   input.path = ["/opa/items"]
   token.payload.role == admin_roles[_]
+}
+
+# Allow unmasked customer data
+allow {
+  input.path = ["/customers"]
+  token.payload.role == unmasked_roles[_]
 }
 
 # Helper to get the token payload.
